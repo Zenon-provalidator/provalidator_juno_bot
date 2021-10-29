@@ -64,7 +64,7 @@ function getMessage(coin){
 			msg += `🔐Staked : ${numberWithCommas(stakedTokens)} (${stakedPercent}%)\n\n`
 			msg += `🔓Unstaked : ${numberWithCommas(notStakedTokens)} (${notStakedPercent}%)\n\n`
 			msg += `⛓️Current Sply : ${numberWithCommas(maxTokens)} (100%)\n\n`
-			msg += `⛓️Max Sply : ${numberWithCommas(185562268)}\n\n`
+			//msg += `⛓️Max Sply : ${numberWithCommas(185562268)}\n\n`
 			msg += `<b>Stake JUNO with ❤️Provalidator</b>\n\n`
 			msg += `<b>🔖Commission: 0%</b>\n\n`
 			msg += `<b>🏆Validator Ranking: #${prvRank}</b>\n\n`
