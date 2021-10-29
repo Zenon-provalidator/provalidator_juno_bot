@@ -60,9 +60,11 @@ function getMessage(coin){
 				prvTokens = rJson.prvTokens
 			}
 			msg += `🥩<b>Staking</b>\n\n`
+			msg += `💰Price : ${getPrice()}\n\n`
 			msg += `🔐Staked : ${numberWithCommas(stakedTokens)} (${stakedPercent}%)\n\n`
 			msg += `🔓Unstaked : ${numberWithCommas(notStakedTokens)} (${notStakedPercent}%)\n\n`
-			msg += `⛓️Max Sply : ${numberWithCommas(maxTokens)} (100%)\n\n`
+			msg += `⛓️Current Sply : ${numberWithCommas(maxTokens)} (100%)\n\n`
+			msg += `⛓️Max Sply : ${numberWithCommas(185562268)}\n\n`
 			msg += `<b>Stake JUNO with ❤️Provalidator</b>\n\n`
 			msg += `<b>🔖Commission: 0%</b>\n\n`
 			msg += `<b>🏆Validator Ranking: #${prvRank}</b>\n\n`
@@ -83,6 +85,12 @@ function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
+function getPrice(){
+	let json = fetch('https://api.coingecko.com/api/v3/simple/price?ids=juno-network&vs_currencies=usd').json()
+	json = JSON.stringify(json).replace("juno-network","juno")
+	json = JSON.parse(json)
+	return json.juno.usd
+}
 function getProvalidatorDetail(){
 	let json = fetch(process.env.JUNO_API_URL+"/staking/validators").json()
 	let obj = {};
@@ -115,5 +123,6 @@ function getJunoInfo(){
 
 module.exports = {
 	getMessage : getMessage,
-	getProvalidatorDetail : getProvalidatorDetail
+	getProvalidatorDetail : getProvalidatorDetail,
+	getPrice : getPrice
 }
