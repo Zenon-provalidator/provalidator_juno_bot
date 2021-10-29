@@ -60,7 +60,7 @@ function getMessage(coin){
 				prvTokens = rJson.prvTokens
 			}
 			msg += `🥩<b>Staking</b>\n\n`
-			msg += `💰Price : $${getPrice()}\n\n`
+			msg += `💰Price : $${getPrice()} (CoinGecko)\n\n`
 			msg += `🔐Staked : ${numberWithCommas(stakedTokens)} (${stakedPercent}%)\n\n`
 			msg += `🔓Unstaked : ${numberWithCommas(notStakedTokens)} (${notStakedPercent}%)\n\n`
 			msg += `⛓️Current Sply : ${numberWithCommas(maxTokens)} (100%)\n\n`
