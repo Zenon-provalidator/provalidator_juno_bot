@@ -70,7 +70,7 @@ function getMessage(coin){
 			msg += `💰<b>가격: $${priceUsd} (약 ${numberWithCommas(priceKrw)}원)</b>\n\n`
 			msg += `🔐본딩: ${numberWithCommas(stakedTokens)} (${stakedPercent}%)\n\n`
 			msg += `🔓언본딩: ${numberWithCommas(notStakedTokens)} (${notStakedPercent}%)\n\n`
-			msg += `⛓️최대 공급량: ${numberWithCommas(maxTokens)} (100%)\n\n`
+			msg += `⛓️현재 유통량: ${numberWithCommas(maxTokens)} (100%)\n\n`
 			msg += `<b>프로밸리와 $JUNO 스테이킹 하세요❤️</b>\n\n`
 			msg += `<b>🏆검증인 순위: #${prvRank}</b>\n\n`
 			msg += `<b>🔖수수료: ${prvRate}%</b>\n\n`
